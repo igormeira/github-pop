@@ -8,8 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.igormeira.githubpop.R
-import com.igormeira.githubpop.apirequests.ConnectivityService
-import com.igormeira.githubpop.data.RepositoryData
+import com.igormeira.githubpop.api.ConnectivityService
 import com.igormeira.githubpop.data.RepositoryFactory
 import com.igormeira.githubpop.model.Repository
 import com.igormeira.githubpop.pullrequest.PullRequestsActivity

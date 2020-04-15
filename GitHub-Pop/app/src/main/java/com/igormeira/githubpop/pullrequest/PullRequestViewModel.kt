@@ -10,8 +10,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.igormeira.githubpop.R
-import com.igormeira.githubpop.apirequests.ConnectivityService
-import com.igormeira.githubpop.data.PullRequestData
+import com.igormeira.githubpop.api.ConnectivityService
 import com.igormeira.githubpop.data.PullRequestFactory
 import com.igormeira.githubpop.model.PullRequest
 import org.koin.core.KoinComponent

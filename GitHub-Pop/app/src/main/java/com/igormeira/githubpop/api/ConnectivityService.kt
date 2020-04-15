@@ -1,4 +1,4 @@
-package com.igormeira.githubpop.apirequests
+package com.igormeira.githubpop.api
 
 import android.content.Context
 import android.net.ConnectivityManager

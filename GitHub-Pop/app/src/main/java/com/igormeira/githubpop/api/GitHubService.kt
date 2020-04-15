@@ -1,4 +1,4 @@
-package com.igormeira.githubpop.apirequests
+package com.igormeira.githubpop.api
 
 import com.igormeira.githubpop.model.PullRequest
 import com.igormeira.githubpop.model.Repositories

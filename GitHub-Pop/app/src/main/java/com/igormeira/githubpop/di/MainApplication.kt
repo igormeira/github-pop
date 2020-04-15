@@ -1,8 +1,8 @@
-package com.igormeira.githubpop
+package com.igormeira.githubpop.di
 
 import android.app.Application
-import com.igormeira.githubpop.apirequests.ConnectivityService
-import com.igormeira.githubpop.apirequests.GitHubService
+import com.igormeira.githubpop.api.ConnectivityService
+import com.igormeira.githubpop.api.GitHubService
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.dsl.module

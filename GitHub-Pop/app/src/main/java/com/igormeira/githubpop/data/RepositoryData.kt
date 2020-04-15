@@ -1,7 +1,7 @@
 package com.igormeira.githubpop.data
 
 import androidx.paging.PageKeyedDataSource
-import com.igormeira.githubpop.apirequests.GitHubService
+import com.igormeira.githubpop.api.GitHubService
 import com.igormeira.githubpop.model.Repositories
 import com.igormeira.githubpop.model.Repository
 import org.koin.core.KoinComponent

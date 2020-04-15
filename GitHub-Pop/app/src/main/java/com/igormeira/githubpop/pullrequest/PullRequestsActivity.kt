@@ -15,19 +15,25 @@ class PullRequestsActivity : AppCompatActivity() {
 
     lateinit var viewModel: PullRequestViewModel
     lateinit var adapter: PullRequestRecyclerAdapter
+    lateinit var repoName: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pull_requests)
-        //toolbar.setNavigationOnClickListener { finish() }
 
         setUpViewModel()
         setUpAdapter()
         setUpObservers()
+        setUpViewElements()
+    }
+
+    private fun setUpViewElements() {
+        backButton.setOnClickListener { finish() }
+        repositoryName.text = repoName
     }
 
     private fun setUpViewModel() {
-        val repoName = intent.getStringExtra(Constants.REPOSITORY_NAME.name)!!
+        repoName = intent.getStringExtra(Constants.REPOSITORY_NAME.name)!!
         val repoCreator = intent.getStringExtra(Constants.REPOSITORY_CREATOR.name)!!
         viewModel = ViewModelProviders.of(this, PullRequestViewModelFactory(
             this.application, repoName, repoCreator)).get(PullRequestViewModel::class.java)
