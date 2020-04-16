@@ -1,6 +1,7 @@
 package com.igormeira.githubpop.pullrequest
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -54,9 +55,9 @@ class PullRequestsActivity : AppCompatActivity() {
             startActivity(it)
         })
 
-        /*viewModel.displayEmptyMessage.observe(this, Observer {
-            empty_list_text.visibility = if (it) View.VISIBLE else View.GONE
-        })*/
+        viewModel.displayLoading.observe(this, Observer {
+            loadingPRAnim.visibility = if (it) View.VISIBLE else View.GONE
+        })
 
         viewModel.displayNoBrowserMessage.observe(this, Observer {
             Snackbar.make(pull_requests_layout, it, Snackbar.LENGTH_LONG).show()

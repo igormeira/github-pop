@@ -30,6 +30,7 @@ class PullRequestViewModel(application: Application, private val repoName: Strin
     var displayNoBrowserMessage = MutableLiveData<String>()
     var displayConnectivityMessage = MutableLiveData<String>()
     var displayLoadPullRequestsError = MutableLiveData<String>()
+    var displayLoading = MutableLiveData<Boolean>()
 
     init {
         loadPullRequests()
@@ -44,8 +45,8 @@ class PullRequestViewModel(application: Application, private val repoName: Strin
         list = LivePagedListBuilder<Int, PullRequest>(dataSourceFactory, config).build()
     }
 
-    private fun onInitialFetchCompleted(isEmpty: Boolean) {
-        displayEmptyMessage.postValue(isEmpty)
+    private fun onInitialFetchCompleted(show: Boolean) {
+        displayLoading.postValue(show)
     }
 
     private fun onLoadPullRequestsError() {

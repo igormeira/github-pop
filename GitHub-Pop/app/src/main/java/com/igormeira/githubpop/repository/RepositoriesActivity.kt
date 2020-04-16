@@ -1,6 +1,7 @@
 package com.igormeira.githubpop.repository
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -9,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.igormeira.githubpop.R
 import kotlinx.android.synthetic.main.activity_repositories.*
-import java.util.*
 
 class RepositoriesActivity : AppCompatActivity() {
 
@@ -40,9 +40,9 @@ class RepositoriesActivity : AppCompatActivity() {
             startActivity(it)
         })
 
-        /*viewModel.displayEmptyMessage.observe(this, Observer {
-            empty_list_text.visibility = if (it) View.VISIBLE else View.GONE
-        })*/
+        viewModel.displayLoading.observe(this, Observer {
+            loadingAnim.visibility = if (it) View.VISIBLE else View.GONE
+        })
 
         viewModel.displayConnectivityMessage.observe(this, Observer {
             Snackbar.make(repositories_layout, it, Snackbar.LENGTH_LONG).show()

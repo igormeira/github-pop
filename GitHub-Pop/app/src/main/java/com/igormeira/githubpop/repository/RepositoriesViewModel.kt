@@ -28,6 +28,7 @@ class RepositoriesViewModel(application: Application) : AndroidViewModel(applica
     var displayEmptyMessage = MutableLiveData<Boolean>()
     var displayConnectivityMessage = MutableLiveData<String>()
     var displayLoadRepositoryError = MutableLiveData<String>()
+    var displayLoading = MutableLiveData<Boolean>()
 
     init {
         loadRepositories()
@@ -42,8 +43,8 @@ class RepositoriesViewModel(application: Application) : AndroidViewModel(applica
         list = LivePagedListBuilder<Int, Repository>(dataSourceFactory, config).build()
     }
 
-    private fun onInitialFetchCompleted(isEmpty: Boolean) {
-        displayEmptyMessage.postValue(isEmpty)
+    private fun onInitialFetchCompleted(show: Boolean) {
+        displayLoading.postValue(show)
     }
 
     private fun onLoadRepositoriesError() {
@@ -52,7 +53,7 @@ class RepositoriesViewModel(application: Application) : AndroidViewModel(applica
 
     fun onRepositoryClick(repository: Repository) {
         intent.postValue(Intent(context, PullRequestsActivity::class.java).apply {
-            putExtra(Constants.REPOSITORY_CREATOR.name, repository.user?.username)
+            putExtra(Constants.REPOSITORY_CREATOR.name, repository.user.username)
             putExtra(Constants.REPOSITORY_NAME.name, repository.title)
         })
     }

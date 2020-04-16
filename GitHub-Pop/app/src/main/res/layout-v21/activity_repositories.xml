@@ -40,6 +40,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/infos"/>
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loadingAnim"
+            android:layout_width="@dimen/loadingWidth"
+            android:layout_height="@dimen/loadingHeight"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/recyclerViewRepository"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="loading.json"
+            app:lottie_loop="true" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

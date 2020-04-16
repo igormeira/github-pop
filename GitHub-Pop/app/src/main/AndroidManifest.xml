@@ -20,6 +20,12 @@
         <activity
             android:name=".repository.RepositoriesActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+
+        <activity
+            android:name=".splashscreen.SplashScreenActivity"
+            android:theme="@style/AppTheme.NoActionBar.Fullscreen"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
