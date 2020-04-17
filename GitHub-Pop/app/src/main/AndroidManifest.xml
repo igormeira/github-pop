@@ -13,26 +13,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".selection.SelectionActivity"></activity>
         <activity
             android:name=".pullrequest.PullRequestsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
-
         <activity
             android:name=".repository.RepositoriesActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize" >
-        </activity>
-
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
         <activity
             android:name=".splashscreen.SplashScreenActivity"
-            android:theme="@style/AppTheme.NoActionBar.Fullscreen"
-            android:configChanges="orientation|keyboardHidden|screenSize" >
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/AppTheme.NoActionBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

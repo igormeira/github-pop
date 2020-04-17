@@ -6,6 +6,7 @@ import android.os.Handler
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.igormeira.githubpop.repository.RepositoriesActivity
+import com.igormeira.githubpop.selection.SelectionActivity
 
 class SplashScreenViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -17,7 +18,7 @@ class SplashScreenViewModel(application: Application) : AndroidViewModel(applica
     }
 
     private fun startApplication() {
-        intent.postValue(Intent(context, RepositoriesActivity::class.java))
+        intent.postValue(Intent(context, SelectionActivity::class.java))
     }
 
 }
