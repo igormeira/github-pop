@@ -48,11 +48,12 @@
         app:layout_constraintTop_toBottomOf="@+id/line">
 
         <ImageButton
+            android:id="@+id/cppCardImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
-            android:backgroundTint="@color/white"
+            android:background="@drawable/language_button_states"
             android:scaleType="centerInside"
             android:src="@drawable/cpp_logo" />
 
@@ -69,9 +70,10 @@
         app:layout_constraintTop_toTopOf="@+id/cppCard" >
 
         <ImageButton
+            android:id="@+id/javaCardImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="@color/white"
+            android:background="@drawable/language_button_states"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
             android:scaleType="centerInside"
@@ -90,11 +92,12 @@
         app:layout_constraintTop_toBottomOf="@+id/cppCard">
 
         <ImageButton
+            android:id="@+id/jsCardImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
-            android:backgroundTint="@color/white"
+            android:background="@drawable/language_button_states"
             android:scaleType="centerInside"
             android:src="@drawable/js_logo" />
 
@@ -110,11 +113,12 @@
         app:layout_constraintTop_toTopOf="@+id/jsCard">
 
         <ImageButton
+            android:id="@+id/kotlinCardImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
-            android:backgroundTint="@color/white"
+            android:background="@drawable/language_button_states"
             android:scaleType="centerInside"
             android:src="@drawable/kotlin_logo" />
 
@@ -131,11 +135,12 @@
         app:layout_constraintTop_toBottomOf="@+id/jsCard">
 
         <ImageButton
+            android:id="@+id/pythonCardImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
-            android:backgroundTint="@color/white"
+            android:background="@drawable/language_button_states"
             android:scaleType="centerInside"
             android:src="@drawable/python_logo" />
 
@@ -151,11 +156,12 @@
         app:layout_constraintTop_toTopOf="@+id/pythonCard">
 
         <ImageButton
+            android:id="@+id/swiftCardImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
-            android:backgroundTint="@color/white"
+            android:background="@drawable/language_button_states"
             android:scaleType="centerInside"
             android:src="@drawable/swift_logo" />
 

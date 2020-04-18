@@ -9,20 +9,35 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.igormeira.githubpop.R
+import com.igormeira.githubpop.util.Constants
 import kotlinx.android.synthetic.main.activity_repositories.*
 
 class RepositoriesActivity : AppCompatActivity() {
 
     lateinit var viewModel: RepositoriesViewModel
     lateinit var adapter: RepositoriesRecyclerAdapter
+    lateinit var language: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_repositories)
 
-        viewModel = ViewModelProviders.of(this).get(RepositoriesViewModel::class.java)
+        setUpViewModel()
+        setUpViewElements()
         setUpAdapter()
         setUpObservers()
+    }
+
+    private fun setUpViewModel() {
+        language = intent.getStringExtra(Constants.LANGUAGE.name)!!
+        viewModel = ViewModelProviders.of(this,
+            RepositoriesViewModelFactory(this.application, language))
+            .get(RepositoriesViewModel::class.java)
+    }
+
+    private fun setUpViewElements() {
+        languageName.text = language
+        backButton.setOnClickListener{ finish() }
     }
 
     private fun setUpAdapter() {

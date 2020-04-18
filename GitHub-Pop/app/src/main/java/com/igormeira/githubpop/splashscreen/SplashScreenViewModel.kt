@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Handler
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.igormeira.githubpop.repository.RepositoriesActivity
 import com.igormeira.githubpop.selection.SelectionActivity
 
 class SplashScreenViewModel(application: Application) : AndroidViewModel(application) {

@@ -16,7 +16,8 @@ import com.igormeira.githubpop.util.Constants
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
-class RepositoriesViewModel(application: Application) : AndroidViewModel(application),
+class RepositoriesViewModel(application: Application,
+                            private val language: String) : AndroidViewModel(application),
     KoinComponent {
 
     private val connectivityService: ConnectivityService by inject()
@@ -38,7 +39,7 @@ class RepositoriesViewModel(application: Application) : AndroidViewModel(applica
     }
 
     private fun loadRepositories() {
-        val dataSourceFactory = RepositoryFactory(::onInitialFetchCompleted, ::onLoadRepositoriesError)
+        val dataSourceFactory = RepositoryFactory(::onInitialFetchCompleted, ::onLoadRepositoriesError, language)
         val config = PagedList.Config.Builder().setPageSize(10).setInitialLoadSizeHint(20).setEnablePlaceholders(false).build()
         list = LivePagedListBuilder<Int, Repository>(dataSourceFactory, config).build()
     }
