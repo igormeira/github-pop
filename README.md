@@ -18,10 +18,10 @@ Repositório para o GitHub Pop Android (Kotlin)
 <br>
 
 <p align="center">
-  <img alt="Splash" src="./images/splashscreen_GitHubPop.jpg" width="25%">
-  <img alt="main" src="./images/main_GitHubPop.jpg" width="25%">
-  <img alt="repository" src="./images/repository_GitHubPop.jpg" width="25%">
-  <img alt="pullrequest" src="./images/pullrequest_GitHubPop.jpg" width="25%">
+  <img alt="Splash" src="./images/splashscreen_GitHubPop.jpg" width="15%">
+  <img alt="main" src="./images/main_GitHubPop.jpg" width="15%">
+  <img alt="repository" src="./images/repository_GitHubPop.jpg" width="15%">
+  <img alt="pullrequest" src="./images/pullrequest_GitHubPop.jpg" width="15%">
 </p>
 
 ## 💻 Projeto
