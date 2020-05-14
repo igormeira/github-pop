@@ -59,6 +59,10 @@ class LoginActivity : AppCompatActivity() {
             else dataBinding.loginWarning.visibility = View.INVISIBLE
         })
 
+        viewModel.displayConnectivityMessage.observe(this, Observer {
+            Snackbar.make(dataBinding.loginLayout, it, Snackbar.LENGTH_LONG).show()
+        })
+
         viewModel.displayLoginError.observe(this, Observer {
             Snackbar.make(dataBinding.loginLayout, it, Snackbar.LENGTH_LONG).show()
         })

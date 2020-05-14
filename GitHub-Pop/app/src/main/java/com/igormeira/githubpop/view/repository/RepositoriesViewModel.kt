@@ -23,7 +23,6 @@ class RepositoriesViewModel(application: Application,
     private val connectivityService: ConnectivityService by inject()
 
     private val context = application.applicationContext
-
     lateinit var list: LiveData<PagedList<Repository>>
     var intent = MutableLiveData<Intent>()
     var displayEmptyMessage = MutableLiveData<Boolean>()
@@ -33,9 +32,6 @@ class RepositoriesViewModel(application: Application,
 
     init {
         loadRepositories()
-        if (!connectivityService.isNetworkAvailable(context)) {
-            displayConnectivityMessage.postValue(context.getString(R.string.no_network_error))
-        }
     }
 
     private fun loadRepositories() {
@@ -50,7 +46,10 @@ class RepositoriesViewModel(application: Application,
     }
 
     private fun onLoadRepositoriesError() {
-        displayLoadRepositoryError.postValue(context.getString(R.string.load_repo_error))
+        displayLoading.postValue(false)
+        if (connectivityService.isNetworkAvailable(context))
+            displayLoadRepositoryError.postValue(context.getString(R.string.load_repo_error))
+        else displayConnectivityMessage.postValue(context.getString(R.string.no_network_error))
     }
 
     fun onRepositoryClick(repository: Repository) {
