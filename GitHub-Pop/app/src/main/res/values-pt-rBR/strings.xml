@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">GitHub Pop</string>
+
+    <string name="empty_repositories_list">Não há repositório para ser exibido no momento</string>
+    <string name="empty_pull_requests_list">Não há pull request a ser exibido no momento</string>
+    <string name="no_network_error">Não há conexão no momento</string>
+    <string name="load_repo_error">Erro ao tentar carregar repositórios</string>
+    <string name="load_pr_error">Erro ao tentar carregar os pull requests</string>
+    <string name="browser_error">Não há aplicativo no dispositivo que possa abrir este link</string>
+
+    <string name="date_format">dd MMM yyyy</string>
+    <string name="repositories">Repositórios</string>
+    <string name="pull_requests">Pull Requests</string>
+    <string name="language">Linguagem</string>
+    <string name="username">Usuário</string>
+    <string name="password">Senha</string>
+    <string name="invalid_login">Usuário ou senha inválidos!</string>
+    <string name="log_in">Entrar</string>
+    <string name="about">Sobre</string>
+    <string name="about_text">O GitHub Pop é um projeto que visa apresentar o ranking dos repositórios do GitHub, de acordo com a linguagem escolhida.</string>
+</resources>

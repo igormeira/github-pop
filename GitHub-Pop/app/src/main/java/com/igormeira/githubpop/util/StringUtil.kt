@@ -7,20 +7,20 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 object StringUtil {
-    fun formateDateFromstring(
+    fun formattedDateFromString(
         inputFormat: String?,
         outputFormat: String?,
         inputDate: String?
     ): String {
         var parsed: Date? = null
         var outputDate = ""
-        val df_input =
+        val dfInput =
             SimpleDateFormat(inputFormat, Locale.getDefault())
-        val df_output =
+        val dfOutput =
             SimpleDateFormat(outputFormat, Locale.getDefault())
         try {
-            parsed = df_input.parse(inputDate)
-            outputDate = df_output.format(parsed)
+            parsed = dfInput.parse(inputDate)
+            outputDate = dfOutput.format(parsed)
         } catch (e: ParseException) {
             Log.e(
                 Constraints.TAG,

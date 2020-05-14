@@ -20,6 +20,6 @@ data class PullRequest (
     var user: User
 ) {
     fun getFormattedDate(): String {
-        return StringUtil.formateDateFromstring("yyyy-MM-dd", "dd-MMM-yyyy", date)
+        return StringUtil.formattedDateFromString("yyyy-MM-dd", "dd-MMM-yyyy", date)
     }
 }

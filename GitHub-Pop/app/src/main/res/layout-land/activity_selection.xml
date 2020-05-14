@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.igormeira.githubpop.view.selection.SelectionViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:transitionName="language_transition"
+        tools:context=".view.selection.SelectionActivity">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="@string/app_name"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/logout_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_logout"
+                    android:layout_marginEnd="16dp"
+                    android:onClick="@{() -> viewModel.onClickLogout()}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_info"
+                    android:layout_marginEnd="16dp"
+                    android:onClick="@{() -> viewModel.onClickInfo()}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/logout_btn"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/infos"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:subtitle="@string/language"
+            app:subtitleTextColor="@color/black" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{viewModel.username}"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/infos"
+            app:layout_constraintEnd_toEndOf="@+id/infos"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/infos"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cppCard"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:elevation="@dimen/cardview_default_elevation"
+                    app:cardCornerRadius="5sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageButton
+                        android:id="@+id/cppCardImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/language_button_states"
+                        android:onClick='@{() -> viewModel.onLanguageSelected("Cpp")}'
+                        android:scaleType="centerInside"
+                        android:src="@drawable/cpp_logo" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/javaCard"
+                    android:elevation="@dimen/cardview_default_elevation"
+                    app:cardCornerRadius="5sp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/cppCard" >
+
+                    <ImageButton
+                        android:id="@+id/javaCardImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/language_button_states"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:onClick='@{() -> viewModel.onLanguageSelected("Java")}'
+                        android:scaleType="centerInside"
+                        android:src="@drawable/java_logo"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/jsCard"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:elevation="@dimen/cardview_default_elevation"
+                    app:cardCornerRadius="5sp"
+                    app:layout_constraintEnd_toStartOf="@+id/javaCard"
+                    app:layout_constraintStart_toEndOf="@+id/cppCard"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageButton
+                        android:id="@+id/jsCardImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/language_button_states"
+                        android:onClick='@{() -> viewModel.onLanguageSelected("JavaScript")}'
+                        android:scaleType="centerInside"
+                        android:src="@drawable/js_logo" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/kotlinCard"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="16dp"
+                    android:elevation="@dimen/cardview_default_elevation"
+                    app:cardCornerRadius="5sp"
+                    app:layout_constraintStart_toStartOf="@+id/cppCard"
+                    app:layout_constraintTop_toBottomOf="@+id/cppCard">
+
+                    <ImageButton
+                        android:id="@+id/kotlinCardImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/language_button_states"
+                        android:onClick='@{() -> viewModel.onLanguageSelected("Kotlin")}'
+                        android:scaleType="centerInside"
+                        android:src="@drawable/kotlin_logo" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/pythonCard"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="16dp"
+                    android:elevation="@dimen/cardview_default_elevation"
+                    app:cardCornerRadius="5sp"
+                    app:layout_constraintEnd_toStartOf="@+id/swiftCard"
+                    app:layout_constraintStart_toEndOf="@+id/kotlinCard"
+                    app:layout_constraintTop_toBottomOf="@+id/jsCard">
+
+                    <ImageButton
+                        android:id="@+id/pythonCardImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/language_button_states"
+                        android:onClick='@{() -> viewModel.onLanguageSelected("Python")}'
+                        android:scaleType="centerInside"
+                        android:src="@drawable/python_logo" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/swiftCard"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="16dp"
+                    android:elevation="@dimen/cardview_default_elevation"
+                    app:cardCornerRadius="5sp"
+                    app:layout_constraintEnd_toEndOf="@+id/javaCard"
+                    app:layout_constraintTop_toBottomOf="@+id/javaCard">
+
+                    <ImageButton
+                        android:id="@+id/swiftCardImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/language_button_states"
+                        android:onClick='@{() -> viewModel.onLanguageSelected("Swift")}'
+                        android:scaleType="centerInside"
+                        android:src="@drawable/swift_logo" />
+
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

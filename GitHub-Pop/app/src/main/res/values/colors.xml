@@ -15,4 +15,7 @@
     <!--YELLOW-->
     <color name="yellow">#DDF9AA08</color>
 
+    <!-- RED -->
+    <color name="red">#EB3C3C</color>
+
 </resources>
